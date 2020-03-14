@@ -105,19 +105,24 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: '微軟正黑體', Courier, monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.input-box{
-    height:25px;
-    margin:0 10px;
-    font-size: 20px;
-    border-radius: 5px;
+    #app {
+        font-family: '微軟正黑體', Courier, monospace;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        max-width:960px;
+        color: #2c3e50;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    #main-logo{
+        margin: 0 auto;
+    }
+    .input-box{
+        height:25px;
+        margin:0 10px;
+        font-size: 20px;
+        border-radius: 5px;
     }
     .btn{
         width:100px;
@@ -140,7 +145,7 @@ export default {
         color:#FFC107;
     }
     ul{ 
-        width:960px;
+        width:100%;
         margin:20px auto;
         font-size: 20px;
         font-family: '微軟正黑體', Courier, monospace
@@ -185,5 +190,29 @@ export default {
     .isFinished{
         text-decoration:line-through;
         color:gray;
+    }
+    @media screen and (max-width:700px){
+        li{
+            grid-template-columns: 1fr;
+        }
+        .no-import{
+            display: none;
+        }
+        .function-btn{
+            margin-top: 10px; 
+        }
+    }
+    @media screen and (max-width:700px){
+        .btn{
+            width:65px;
+        }
+        .input-box{
+            width:200px;
+        }
+    }
+    @media screen and (max-width:288px){
+        .create{
+            margin-top:10px;
+        }
     }
 </style>

@@ -3,7 +3,7 @@
         {{inputStr}}
         <li>
             <div class="li-title">事情</div>
-            <div class="li-title">功能</div>
+            <div class="li-title no-import">功能</div>
         </li>
         <li v-for="item in todoList" :key="item.id">
             <div v-show="item.isEdit == false">
