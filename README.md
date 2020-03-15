@@ -7,26 +7,6 @@ https://pock999.github.io/vue-todolist/
 一個Todolist的練習
 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
 ### Screenshots
 ![Demo](https://raw.githubusercontent.com/pock999/vue-todolist/master/demo-img/todolist-demo.gif)
 
@@ -46,5 +26,3 @@ npm run lint
 
 4 更改輸入完成後按下**更改**或是**Enter**後，項目就會立刻變動
 
-### Customize configuration
-請參考 [Configuration Reference](https://cli.vuejs.org/config/).
