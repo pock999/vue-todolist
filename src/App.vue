@@ -32,6 +32,7 @@
         :todo-list="list"
         :input-str="inputStr"
         >
+        <!-- 將整個list傳入子組件內 -->
         </TodoList>
     </div>
   </div>
@@ -67,6 +68,10 @@ export default {
             }
         });
         this.list.push({id:ind+1, thing:this.inputStr, finished:false, isEdit:false});
+        /** 
+            預設finished是false --> 代表未完成 
+            isEdit代表可不可以編輯的狀態
+        **/
         this.inputStr = "";
     }
   }

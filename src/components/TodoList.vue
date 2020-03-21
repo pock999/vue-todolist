@@ -6,10 +6,11 @@
             <div class="li-title no-import">功能</div>
         </li>
         <li v-for="item in todoList" :key="item.id">
+            <!-- 若是isEdit為false，表示目前該項目狀態為不可編輯，所以用div顯示 -->
             <div v-show="item.isEdit == false">
                 <div class="things" @click="toggleFinish(item.id)" :class="{isFinished:item.finished}">{{item.thing}}</div>
             </div>
-            
+            <!-- 若是isEdit為true，表示目前該項目狀態為可編輯，所以用input顯示 -->
             <div v-show="item.isEdit == true">
                 <input type="text" v-model="modifyText" class="input-box" 
                 v-on:keyup.13="modifyItem(item.id)">
@@ -40,6 +41,7 @@ export default {
     methods:{
       toggleFinish(itemId){
           this.todoList.forEach((item) => {
+              /** 更改目前完成狀態 **/
               if(item.id == itemId){
                   item.finished = !item.finished;
               }
@@ -48,6 +50,7 @@ export default {
       deleteItem(itemId){
           let newList = this.todoList;
           this.todoList.forEach((item,index) => {
+              /** 刪除選定之項目 **/
               if(item.id == itemId){
                   let id = index;
                   newList.splice(id, 1);
@@ -57,6 +60,7 @@ export default {
       },
       modifyToInput(itemId){
         if(this.haveAnyModify == false){
+            //若現在沒有更改狀態，就呼叫更改框出來
             this.todoList.forEach((item) => {
             if(item.id == itemId){
                 item.isEdit = !item.isEdit;
@@ -67,6 +71,7 @@ export default {
             }
         });
         }else{
+            //表示目前有更改框，所以呼叫更改項目的方法(modifyItem)
             this.modifyItem(itemId);
         }
           
